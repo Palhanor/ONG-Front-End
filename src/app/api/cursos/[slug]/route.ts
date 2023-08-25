@@ -6,6 +6,7 @@ import { courses } from '../../data/courses'
 
 export async function GET(request: Request, context: Context) {
   const slug: string = context.params.slug
+  console.log(slug)
   const course: ICourse | undefined = courses.find(
     (course) => course.slug === slug,
   )

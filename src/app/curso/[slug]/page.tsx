@@ -4,15 +4,14 @@ import { ClockIcon, VideoIcon } from '@/components/general/Icons'
 import Title from '@/components/general/Title'
 import { ICourse } from '@/interfaces/course'
 import { Course as CourseModel } from '@/model/Course'
-import api from '@/server/api'
 import { timeMask } from '@/utils/time-mask'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
 
 async function getCourseBySlug(slug: string) {
   try {
-    const response = await api.get(`/cursos/${slug}`)
-    const { data } = await response.data
+    const response = await fetch(`${process.env.HYPERLINK}/api/cursos/${slug}`)
+    const { data } = await response.json()
     return data
   } catch {
     notFound()
