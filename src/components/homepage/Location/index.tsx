@@ -32,7 +32,7 @@ export default function Location() {
   return (
     <section className="custom-py-section" id="onde-atuamos">
       <Title icon="/icons/location.svg">Onde Atuamos</Title>
-      <h3 className="h-60 w-full bg-people-backgroud bg-cover bg-center py-16 text-center text-3xl font-bold text-white">
+      <h3 className="h-60 w-full bg-people-backgroud bg-cover bg-center px-10 py-10 text-center text-2xl font-bold text-white md:py-16 md:text-3xl">
         Capacitação de Pessoas para um Futuro <br /> Financeiramente
         Sustentável!
       </h3>

@@ -36,7 +36,7 @@ export default async function Course({ params }: { params: { slug: string } }) {
     <>
       <div>
         <Image
-          className="mb-10 w-full"
+          className="mb-10 h-36 object-cover md:h-auto md:w-full"
           src={course.banner}
           alt="Banner do curso"
           width={1440}
@@ -46,7 +46,7 @@ export default async function Course({ params }: { params: { slug: string } }) {
       </div>
 
       <section className="custom-mx-global">
-        <h1 className="pb-2 text-3xl font-semibold text-blue-700">
+        <h1 className="pb-4 text-2xl font-semibold text-blue-700 md:pb-2 md:text-3xl">
           Cuso de {course.name}
         </h1>
         <p className="flex font-medium text-gray-600">
@@ -60,7 +60,7 @@ export default async function Course({ params }: { params: { slug: string } }) {
             {timeMask(course.duration)}
           </span>
         </p>
-        <p className="py-2 text-base font-normal text-gray-700">
+        <p className="mb-4 mt-3 text-base font-normal text-gray-700">
           {course.about}
         </p>
       </section>

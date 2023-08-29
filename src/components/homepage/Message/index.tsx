@@ -42,15 +42,18 @@ export default function Message() {
       onSubmit={handleSubmit}
     >
       <Title icon="/icons/talk.svg">Fale Conosco</Title>
-      <h3 className="h-60 w-full bg-talk-backgroud bg-cover bg-center px-36 py-12 pb-16 text-center text-3xl font-bold text-white">
+      <h3 className="h-60 w-full bg-talk-backgroud bg-cover bg-center px-10 py-12 pb-16 text-center text-xl font-bold text-white md:px-36 md:text-3xl">
         Se você tem alguma dúvida ou precisa de informações específicas, fique à
         vontade para perguntar.
       </h3>
-      <form className="relative mx-auto -mt-20 grid w-3/5 grid-cols-2 gap-4 rounded-lg bg-white p-6 shadow-lg">
-        <label className="flex flex-col gap-2" htmlFor="name">
+      <form className="relative mx-auto -mt-10 grid w-5/6 grid-cols-2 gap-4 rounded-xl bg-white p-5 shadow-lg md:-mt-20 md:w-3/5 md:rounded-lg md:p-8">
+        <label
+          className="col-span-2 flex flex-col gap-2 md:col-span-1"
+          htmlFor="name"
+        >
           Nome
           <input
-            className="rounded-sm bg-slate-100 p-2"
+            className="rounded-sm bg-slate-200 p-2"
             value={state.name}
             onChange={handleChange}
             type="text"
@@ -60,10 +63,13 @@ export default function Message() {
           />
         </label>
 
-        <label className="flex flex-col gap-2" htmlFor="email">
+        <label
+          className="col-span-2 flex flex-col gap-2 md:col-span-1"
+          htmlFor="email"
+        >
           E-mail{' '}
           <input
-            className="rounded-sm bg-slate-100 p-2"
+            className="rounded-sm bg-slate-200 p-2"
             value={state.email}
             onChange={handleChange}
             type="email"
@@ -76,7 +82,7 @@ export default function Message() {
         <label className="col-span-2 flex flex-col gap-2" htmlFor="title">
           Título
           <input
-            className="rounded-sm bg-slate-100 p-2"
+            className="rounded-sm bg-slate-200 p-2"
             value={state.title}
             onChange={handleChange}
             id="title"
@@ -89,7 +95,7 @@ export default function Message() {
         <label className="col-span-2 flex flex-col gap-2" htmlFor="message">
           Mensagem
           <textarea
-            className="rounded-sm bg-slate-100 p-2"
+            className="rounded-sm bg-slate-200 p-2"
             value={state.message}
             onChange={handleChange}
             name="message"

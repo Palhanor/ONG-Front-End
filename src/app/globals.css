@@ -8,7 +8,7 @@ html{
 
 @layer utilities{
   .custom-mx-global{
-    @apply mx-[10%]
+    @apply mx-[10%] 
   }
   .custom-py-section {
     @apply pt-14 pb-6
