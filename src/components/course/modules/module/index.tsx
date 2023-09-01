@@ -41,7 +41,7 @@ export default function Module({
             </h2>
             <span
               className={
-                'hidden text-gray-500 md:block ' + (open && 'text-gray-300')
+                'hidden md:block ' + (open ? 'text-gray-200' : 'text-gray-500')
               }
             >
               {timeMask(module.duration || 0)}
@@ -55,7 +55,7 @@ export default function Module({
         </header>
         <p
           className={
-            'text-sm text-gray-600 md:text-base ' + (open && 'text-gray-100')
+            'text-sm md:text-base ' + (open ? 'text-gray-100' : 'text-gray-600')
           }
         >
           {textPreview(module.description, window.innerWidth, open)}
