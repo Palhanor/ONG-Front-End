@@ -7,7 +7,7 @@ export const lessons: ILesson[] = [
     title: 'Entendendo o que é a economia',
     description: 'Lorem ipsum...',
     duration: 12,
-    url: 'https://www.youtube.com/watch?v=SiIztrwfg1s',
+    url: 'SiIztrwfg1s',
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ export const lessons: ILesson[] = [
     title: 'Entendendo o que é a economia',
     description: 'Lorem ipsum...',
     duration: 12,
-    url: 'https://www.youtube.com/watch?v=SiIztrwfg1s',
+    url: 'SiIztrwfg1s',
   },
   {
     id: 3,
@@ -23,7 +23,7 @@ export const lessons: ILesson[] = [
     title: 'Entendendo o que é a economia',
     description: 'Lorem ipsum...',
     duration: 12,
-    url: 'https://www.youtube.com/watch?v=SiIztrwfg1s',
+    url: 'SiIztrwfg1s',
   },
   {
     id: 4,
@@ -31,7 +31,7 @@ export const lessons: ILesson[] = [
     title: 'Entendendo o que é a economia',
     description: 'Lorem ipsum...',
     duration: 12,
-    url: 'https://www.youtube.com/watch?v=SiIztrwfg1s',
+    url: 'SiIztrwfg1s',
   },
   {
     id: 5,
@@ -39,7 +39,7 @@ export const lessons: ILesson[] = [
     title: 'Entendendo o que é a economia',
     description: 'Lorem ipsum...',
     duration: 12,
-    url: 'https://www.youtube.com/watch?v=SiIztrwfg1s',
+    url: 'SiIztrwfg1s',
   },
   {
     id: 6,
@@ -47,7 +47,7 @@ export const lessons: ILesson[] = [
     title: 'Entendendo o que é a economia',
     description: 'Lorem ipsum...',
     duration: 12,
-    url: 'https://www.youtube.com/watch?v=SiIztrwfg1s',
+    url: 'SiIztrwfg1s',
   },
   {
     id: 7,
@@ -55,7 +55,7 @@ export const lessons: ILesson[] = [
     title: 'Entendendo o que é a economia',
     description: 'Lorem ipsum...',
     duration: 12,
-    url: 'https://www.youtube.com/watch?v=SiIztrwfg1s',
+    url: 'SiIztrwfg1s',
   },
   {
     id: 8,
@@ -63,7 +63,7 @@ export const lessons: ILesson[] = [
     title: 'Entendendo o que é a economia',
     description: 'Lorem ipsum...',
     duration: 12,
-    url: 'https://www.youtube.com/watch?v=SiIztrwfg1s',
+    url: 'SiIztrwfg1s',
   },
   {
     id: 9,
@@ -71,7 +71,7 @@ export const lessons: ILesson[] = [
     title: 'Entendendo o que é a economia',
     description: 'Lorem ipsum...',
     duration: 12,
-    url: 'https://www.youtube.com/watch?v=SiIztrwfg1s',
+    url: 'SiIztrwfg1s',
   },
   {
     id: 10,
@@ -79,7 +79,7 @@ export const lessons: ILesson[] = [
     title: 'Entendendo o que é a economia',
     description: 'Lorem ipsum...',
     duration: 12,
-    url: 'https://www.youtube.com/watch?v=SiIztrwfg1s',
+    url: 'SiIztrwfg1s',
   },
   {
     id: 11,
@@ -87,7 +87,7 @@ export const lessons: ILesson[] = [
     title: 'Entendendo o que é a economia',
     description: 'Lorem ipsum...',
     duration: 12,
-    url: 'https://www.youtube.com/watch?v=SiIztrwfg1s',
+    url: 'SiIztrwfg1s',
   },
   {
     id: 12,
@@ -95,7 +95,7 @@ export const lessons: ILesson[] = [
     title: 'Entendendo o que é a economia',
     description: 'Lorem ipsum...',
     duration: 12,
-    url: 'https://www.youtube.com/watch?v=SiIztrwfg1s',
+    url: 'SiIztrwfg1s',
   },
   {
     id: 13,
@@ -103,7 +103,7 @@ export const lessons: ILesson[] = [
     title: 'Entendendo o que é a economia',
     description: 'Lorem ipsum...',
     duration: 12,
-    url: 'https://www.youtube.com/watch?v=SiIztrwfg1s',
+    url: 'SiIztrwfg1s',
   },
   {
     id: 14,
@@ -111,7 +111,7 @@ export const lessons: ILesson[] = [
     title: 'Entendendo o que é a economia',
     description: 'Lorem ipsum...',
     duration: 12,
-    url: 'https://www.youtube.com/watch?v=SiIztrwfg1s',
+    url: 'SiIztrwfg1s',
   },
   {
     id: 15,
@@ -119,7 +119,7 @@ export const lessons: ILesson[] = [
     title: 'Entendendo o que é a economia',
     description: 'Lorem ipsum...',
     duration: 12,
-    url: 'https://www.youtube.com/watch?v=SiIztrwfg1s',
+    url: 'SiIztrwfg1s',
   },
   {
     id: 16,
@@ -127,7 +127,7 @@ export const lessons: ILesson[] = [
     title: 'Entendendo o que é a economia',
     description: 'Lorem ipsum...',
     duration: 12,
-    url: 'https://www.youtube.com/watch?v=SiIztrwfg1s',
+    url: 'SiIztrwfg1s',
   },
   {
     id: 17,
@@ -135,7 +135,7 @@ export const lessons: ILesson[] = [
     title: 'Entendendo o que é a economia',
     description: 'Lorem ipsum...',
     duration: 12,
-    url: 'https://www.youtube.com/watch?v=SiIztrwfg1s',
+    url: 'SiIztrwfg1s',
   },
   {
     id: 18,
@@ -143,7 +143,7 @@ export const lessons: ILesson[] = [
     title: 'Entendendo o que é a economia',
     description: 'Lorem ipsum...',
     duration: 12,
-    url: 'https://www.youtube.com/watch?v=SiIztrwfg1s',
+    url: 'SiIztrwfg1s',
   },
   {
     id: 19,
@@ -151,7 +151,7 @@ export const lessons: ILesson[] = [
     title: 'Entendendo o que é a economia',
     description: 'Lorem ipsum...',
     duration: 12,
-    url: 'https://www.youtube.com/watch?v=SiIztrwfg1s',
+    url: 'SiIztrwfg1s',
   },
   {
     id: 20,
@@ -159,6 +159,6 @@ export const lessons: ILesson[] = [
     title: 'Entendendo o que é a economia',
     description: 'Lorem ipsum...',
     duration: 12,
-    url: 'https://www.youtube.com/watch?v=SiIztrwfg1s',
+    url: 'SiIztrwfg1s',
   },
 ]

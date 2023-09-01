@@ -1,4 +1,4 @@
-import Module from '@/components/course/module'
+import Modules from '@/components/course/modules'
 import Professor from '@/components/course/professor'
 import { ClockIcon, VideoIcon } from '@/components/general/Icons'
 import Title from '@/components/general/Title'
@@ -9,13 +9,10 @@ import Image from 'next/image'
 import { notFound } from 'next/navigation'
 
 async function getCourseBySlug(slug: string) {
-  try {
-    const response = await fetch(`${process.env.HYPERLINK}/api/cursos/${slug}`)
-    const { data } = await response.json()
-    return data
-  } catch {
-    notFound()
-  }
+  const response = await fetch(`${process.env.HYPERLINK}/api/cursos/${slug}`)
+  if (response.status !== 200) notFound()
+  const { data } = await response.json()
+  return data
 }
 
 export async function generateMetadata({
@@ -45,17 +42,17 @@ export default async function Course({ params }: { params: { slug: string } }) {
         />
       </div>
 
-      <section className="custom-mx-global">
+      <section className="md:custom-mx-global mx-6">
         <h1 className="pb-4 text-2xl font-semibold text-blue-700 md:pb-2 md:text-3xl">
           Cuso de {course.name}
         </h1>
-        <p className="flex font-medium text-gray-600">
-          <span className="mr-3 flex items-center gap-1">
+        <p className="flex flex-col gap-3 font-medium text-gray-600 md:flex-row">
+          <span className="flex items-center gap-1">
             <VideoIcon />
             {course.lessons} Aulas
           </span>
-          &#x2022;
-          <span className="ml-2 flex items-center gap-1">
+          <div className="hidden md:block">&#x2022;</div>
+          <span className="flex items-center gap-1">
             <ClockIcon />
             {timeMask(course.duration)}
           </span>
@@ -65,15 +62,11 @@ export default async function Course({ params }: { params: { slug: string } }) {
         </p>
       </section>
 
-      <main className="custom-mx-global py-10">
-        {course.modules.map((module, index) => (
-          <Module key={module.id} module={module} position={index + 1} />
-        ))}
-      </main>
+      <Modules modules={course.modules} />
 
       <section className="mb-24 mt-16 px-[20%]">
         <Title icon="/icons/hands.svg">Nossos Professores</Title>
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 xl:grid-cols-4">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4 lg:gap-10">
           {course.professors.map((professor) => (
             <Professor key={professor.id} professor={professor} />
           ))}

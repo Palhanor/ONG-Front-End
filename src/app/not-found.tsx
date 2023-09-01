@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function NotFound() {
   return (
     <>
-      <section className="custom-py-section mx-auto my-0 grid max-w-3xl grid-cols-1 items-center gap-5 md:grid-cols-2">
+      <section className="mx-auto my-0 grid max-w-3xl grid-cols-1 items-center gap-5 py-36 md:grid-cols-2">
         <div className="flex justify-center">
           <Image
             src="/images/not-found/404-erro.svg"

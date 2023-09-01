@@ -33,24 +33,19 @@ export default function Footer() {
       <small className="my-3 block text-center text-sm text-white md:text-base">
         &copy; 2023 - Escola do Real - Todos os direitos reservados
       </small>
-      <span className="flex items-center justify-center text-xs text-white">
-        <span className="mr-1 ">Desenvolvido por </span>
-        <a
-          className="underline"
-          rel="external"
-          target="_blank"
-          href="https://jdg-webpage.vercel.app"
-        >
-          Juniors Developers Group.
-        </a>
-        <Image
-          className="mx-3 hidden md:visible"
-          src="/JDG.png"
-          alt="Logo Juniors Developers Group."
-          height={29}
-          width={29}
-        />
-      </span>
+      <div className="flex items-center justify-center text-center text-xs text-white">
+        <span>
+          Desenvolvido por{' '}
+          <Link
+            className="underline"
+            rel="external"
+            target="_blank"
+            href="https://jdg-webpage.vercel.app"
+          >
+            Juniors Developers Group.
+          </Link>
+        </span>
+      </div>
     </footer>
   )
 }

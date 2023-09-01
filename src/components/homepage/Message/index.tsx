@@ -46,7 +46,7 @@ export default function Message() {
         Se você tem alguma dúvida ou precisa de informações específicas, fique à
         vontade para perguntar.
       </h3>
-      <form className="relative mx-auto -mt-10 grid w-5/6 grid-cols-2 gap-4 rounded-xl bg-white p-5 shadow-lg md:-mt-20 md:w-3/5 md:rounded-lg md:p-8">
+      <form className="relative mx-auto -mt-10 grid w-5/6 grid-cols-2 gap-4 rounded-xl bg-white p-5 shadow-lg md:w-4/5 lg:-mt-20 lg:w-3/5 lg:rounded-lg lg:p-8">
         <label
           className="col-span-2 flex flex-col gap-2 md:col-span-1"
           htmlFor="name"

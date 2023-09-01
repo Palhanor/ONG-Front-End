@@ -36,7 +36,7 @@
 4. Formulário de inscrição próprio: Poderá ser criado um formulário para substituir o Google Form na captação de novos membros. Neste caso, será necessário também criar um dashboard onde serão armazenados de forma organizada todos os dados submetidos pelos interessados.
 
 ## Requisitos de sistema
-*Cobertura: 5/10 (50%)*
+*Cobertura: 6/8 (75%)*
 
 Adicionar algum texto...
 
@@ -45,11 +45,10 @@ Adicionar algum texto...
 - [x] A duração é recebida como um número mas precisa ser convertida para um formato com máscara
 - [x] Todos os inputs do campo “Fale conosco” são obrigatórios
 - [x] Ao clicar em “Iniciar curso” e “Conheça nosso curso” o usuário deve ser mandado para a página do curso
+- [x] Os módulos devem ser sistemas que expandem e se contraem ao clicar no ícone de arrow up e arrow down
 - [ ] Ao clicar no botão de “Faça Parte” o usuário deve ser redirecionado para o Forms
 - [ ] Ao clicar no botão de “Fazer Doação” po usuário deve ser redirecionado para o Patreon/Apoia-se
-- [ ] Os módulos devem ser sistemas que expandem e se contraem ao clicar no ícone de arrow up e arrow down
-- [ ] Ao clicar em uma aula é necessário armazená-la como assistido no localStorage, para que ela mude a cor exibida
-- [ ] O background do banner da homepage deve ser um vídeo sem som, autoplay e em loop
+
 *Adicionar novas...*
 
 ## Interfaces
