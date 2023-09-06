@@ -13,16 +13,16 @@ export function middleware(request: Request) {
       )
     }
 
-    // const response = NextResponse.next()
-    // response.headers.append('Access-Control-Allow-Origin', origin)
-    // response.headers.append('Access-Control-Allow-Credentials', 'true')
-    // response.headers.append('Access-Control-Allow-Methods', 'GET')
-    // response.headers.append(
-    //   'Access-Control-Allow-Headers',
-    //   'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version',
-    // )
+    const response = NextResponse.next()
+    response.headers.append('Access-Control-Allow-Origin', origin)
+    response.headers.append('Access-Control-Allow-Credentials', 'true')
+    response.headers.append('Access-Control-Allow-Methods', 'GET')
+    response.headers.append(
+      'Access-Control-Allow-Headers',
+      'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version',
+    )
 
-    // return response
+    return response
   }
 }
 
