@@ -1,3 +1,7 @@
+interface IconProps {
+  className?: string
+}
+
 export function VideoIcon() {
   return (
     <svg
@@ -35,7 +39,7 @@ export function ClockIcon() {
   )
 }
 
-export function DownIcon({ className }: { className?: string }) {
+export function DownIcon({ className }: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +58,7 @@ export function DownIcon({ className }: { className?: string }) {
   )
 }
 
-export function CloseIcon({ className }: { className: string }) {
+export function CloseIcon({ className }: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

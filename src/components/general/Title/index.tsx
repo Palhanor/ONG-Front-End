@@ -1,12 +1,11 @@
 import Image from 'next/image'
 
-export default function Title({
-  icon,
-  children,
-}: {
+interface TitleProps {
   icon?: string
   children: string
-}) {
+}
+
+export default function Title({ icon, children }: TitleProps) {
   return (
     <div className="mb-6 flex flex-col items-center">
       {icon && (

@@ -1,8 +1,9 @@
 'use client'
 
-import { ChangeEvent, FormEvent, useState } from 'react'
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 import Title from '../../general/Title'
 import Button from '../Button'
+import Toast from './Toast'
 
 interface contactForm {
   name: string
@@ -11,13 +12,31 @@ interface contactForm {
   message: string
 }
 
+const cleanState: contactForm = {
+  name: '',
+  email: '',
+  title: '',
+  message: '',
+}
+
 export default function Message() {
-  const [state, setState] = useState<contactForm>({
-    name: '',
-    email: '',
-    title: '',
+  const [state, setState] = useState<contactForm>(cleanState)
+  const [sending, setSending] = useState<boolean>(false)
+  const [toast, setToast] = useState({
     message: '',
+    status: false,
+    visible: false,
   })
+
+  useEffect(() => {
+    setTimeout(() => {
+      setToast({
+        message: '',
+        status: false,
+        visible: false,
+      })
+    }, 10000)
+  }, [toast])
 
   const handleChange = (
     e: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>,
@@ -25,14 +44,32 @@ export default function Message() {
     setState({ ...state, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e: FormEvent<HTMLElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLElement>) => {
     e.preventDefault()
-    setState({
-      name: '',
-      email: '',
-      title: '',
-      message: '',
-    })
+    setSending(true)
+    try {
+      await fetch(`${process.env.NEXT_PUBLIC_PATHNAME}/api/mensagem`, {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json, text/plain, */*',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(state),
+      })
+      setState(cleanState)
+      setToast({
+        message: 'E-mail enviado com sucesso',
+        status: true,
+        visible: true,
+      })
+    } catch (error) {
+      setToast({
+        message: 'Falha ao enviar e-mail',
+        status: false,
+        visible: true,
+      })
+    }
+    setSending(false)
   }
 
   return (
@@ -106,9 +143,10 @@ export default function Message() {
           ></textarea>
         </label>
         <div className="col-span-2 my-3">
-          <Button>Enviar Mensagem!</Button>
+          <Button>{sending ? 'Enviando...' : 'Enviar Mensagem!'}</Button>
         </div>
       </form>
+      {toast.visible && <Toast status={toast.status} message={toast.message} />}
     </section>
   )
 }

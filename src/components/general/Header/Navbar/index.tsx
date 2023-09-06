@@ -31,7 +31,11 @@ const data = [
   },
 ]
 
-export default function Navbar({ isRoot }: { isRoot: boolean }) {
+interface NavbarProps {
+  isRoot: boolean
+}
+
+export default function Navbar({ isRoot }: NavbarProps) {
   return (
     <nav className="custom-mx-global flex flex-col pb-6">
       {isRoot ? (

@@ -20,6 +20,9 @@
 - Códigos em inglês
 - API do Next
 
+## Variáveis de Ambiente
+HYPERLINK...
+
 ## Rotas do sistema
 1. /
 2. /curso/[slug]

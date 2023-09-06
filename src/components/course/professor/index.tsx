@@ -1,7 +1,11 @@
 import { IProfessor } from '@/interfaces/professor'
 import Image from 'next/image'
 
-export default function Professor({ professor }: { professor: IProfessor }) {
+interface ProfessorProps {
+  professor: IProfessor
+}
+
+export default function Professor({ professor }: ProfessorProps) {
   return (
     <div className="mt-6 flex flex-col items-center lg:gap-1">
       <Image

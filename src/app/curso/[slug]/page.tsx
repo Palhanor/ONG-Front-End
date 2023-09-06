@@ -5,26 +5,30 @@ import Title from '@/components/general/Title'
 import { ICourse } from '@/interfaces/course'
 import { Course as CourseModel } from '@/model/Course'
 import { timeMask } from '@/utils/time-mask'
+import { Metadata } from 'next'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
 
+interface MetadataProps {
+  params: { slug: string }
+}
+
 async function getCourseBySlug(slug: string) {
-  const response = await fetch(`${process.env.HYPERLINK}/api/cursos/${slug}`)
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_PATHNAME}/api/cursos/${slug}`,
+  )
   if (response.status !== 200) notFound()
   const { data } = await response.json()
   return data
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string }
-}) {
+export async function generateMetadata({ params }: MetadataProps) {
   const course: ICourse = await getCourseBySlug(params.slug)
-  return {
+  const metadata: Metadata = {
     title: `Curso - ${course.name}`,
-    description: 'Esse é o nosso curso sobre cursos.',
+    description: course.about,
   }
+  return metadata
 }
 
 export default async function Course({ params }: { params: { slug: string } }) {

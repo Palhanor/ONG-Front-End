@@ -2,16 +2,16 @@
 
 import Image from 'next/image'
 
-export default function Card({
-  item,
-}: {
+interface CardProps {
   item: {
     src: string
     alt: string
     title: string
     text: string
   }
-}) {
+}
+
+export default function Card({ item }: CardProps) {
   return (
     <div className="my-4 flex flex-col content-center items-center justify-between gap-4 rounded-lg border-b-8 border-green-500 bg-gray-50 px-7 py-5 font-medium">
       <Image height={52} width={52} alt={item.alt} src={item.src} />
