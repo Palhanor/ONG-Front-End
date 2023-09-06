@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 
-const allowedOrigins = [process.env.PATH]
+const allowedOrigins = [process.env.PATHNAME]
 
 export function middleware(request: Request) {
   if (request.url.includes('/api/')) {
