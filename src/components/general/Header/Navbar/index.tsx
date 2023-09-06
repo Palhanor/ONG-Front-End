@@ -1,5 +1,3 @@
-// TODO: Fazer os ajustes no campo de voltar para a página inicial
-
 import Image from 'next/image'
 import Link from 'next/link'
 import { LeftIcon } from '../../Icons'
@@ -64,7 +62,7 @@ export default function Navbar({ isRoot }: NavbarProps) {
             <button className="rounded-md bg-blue-500 px-5 py-4 text-xs uppercase text-white hover:bg-blue-700">
               Fazer Doação
             </button>
-            <button className="rounded-md bg-green-500 px-5 py-4 text-xs uppercase text-white hover:bg-green-600">
+            <button className="rounded-md bg-green-600 px-5 py-4 text-xs uppercase text-white hover:bg-green-700">
               Faça Parte
             </button>
           </div>

@@ -13,6 +13,7 @@ export default function Course() {
       <div className="md:custom-pt-iframe md:custom-mx-global relative mb-7 flex h-[14.5rem] w-full justify-center md:w-4/5 ">
         <iframe
           className="absolute top-0 h-full w-full"
+          loading="lazy"
           width="1030"
           height="645"
           src="https://www.youtube.com/embed/LXb3EKWsInQ"

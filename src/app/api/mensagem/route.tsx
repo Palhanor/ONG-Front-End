@@ -1,20 +1,7 @@
-/* Alternativas
- * OAuth2
- * App Password (2FA)
- * Less Secure Apps
- */
-
-/* Possíveis problemas
- * Limite de requisições por dia (200)
- * Bloqueio para servidor em local distante
- * Injeção de HTML na mensagem
- * Ataque de spam (captcha e bloqueio da conta)
- */
-
 import { NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
 
-const htmlTemplate = (
+const htmlEmailTemplate = (
   name: string,
   title: string,
   email: string,
@@ -44,10 +31,10 @@ export async function POST(request: Request) {
 
   try {
     await transporter.sendMail({
-      from: email,
+      from: process.env.EMAIL,
       to: process.env.EMAIL,
       subject: title,
-      html: htmlTemplate(name, title, email, message),
+      html: htmlEmailTemplate(name, title, email, message),
     })
     return NextResponse.json({ name, title, email, message }, { status: 201 })
   } catch (error) {
