@@ -1,17 +1,17 @@
 import { NextResponse } from 'next/server'
 
-// const allowedOrigins = [process.env.PATHNAME]
+const allowedOrigins = [process.env.PATHNAME]
 
 export function middleware(request: Request) {
   if (request.url.includes('/api/')) {
-    // const origin = request.headers.get('host') || '' // origin não funciona
+    const origin = request.headers.get('host') || '' // origin não funciona
 
-    // // if (!origin || !allowedOrigins.includes(origin)) {
-    // // }
-    return NextResponse.json(
-      { error: 'Unauthorized operation' },
-      { status: 400 },
-    )
+    if (!origin || !allowedOrigins.includes(origin)) {
+      return NextResponse.json(
+        { error: 'Unauthorized operation' },
+        { status: 400 },
+      )
+    }
 
     // const response = NextResponse.next()
     // response.headers.append('Access-Control-Allow-Origin', origin)
