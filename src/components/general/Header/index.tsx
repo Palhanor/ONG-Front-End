@@ -1,6 +1,7 @@
 'use client'
 
 import Navbar from '@/components/general/Header/Navbar'
+import useWindowWidth from '@/hooks/useWindowWidth'
 import { breakpoints } from '@/utils/breakpoints'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
@@ -11,16 +12,16 @@ export default function Header() {
   const pathname = usePathname()
   const [isRoot, setIsRoot] = useState<boolean>(pathname === '/')
   const [open, setOpen] = useState<boolean>(false)
+  const windowWidth = useWindowWidth()
 
   useLayoutEffect(() => {
-    const mobileAndRoot =
-      window.innerWidth < breakpoints.TABLET && pathname === '/'
+    const mobileAndRoot = windowWidth < breakpoints.TABLET && pathname === '/'
     const desktopOrNotRoot =
-      window.innerWidth >= breakpoints.TABLET || pathname !== '/'
+      windowWidth >= breakpoints.TABLET || pathname !== '/'
     if (mobileAndRoot) setOpen(false)
     if (desktopOrNotRoot) setOpen(true)
     pathname === '/' ? setIsRoot(true) : setIsRoot(false)
-  }, [pathname])
+  }, [windowWidth, pathname])
 
   const handleClick = (): void => setOpen((prev) => !prev)
 

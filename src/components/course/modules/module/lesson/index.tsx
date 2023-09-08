@@ -1,4 +1,5 @@
 import { PlayIcon } from '@/components/general/Icons'
+import useWindowWidth from '@/hooks/useWindowWidth'
 import { ILesson } from '@/interfaces/lesson'
 import { breakpoints } from '@/utils/breakpoints'
 import { timeMask } from '@/utils/time-mask'
@@ -10,8 +11,9 @@ interface LessonProps {
 }
 
 export default function Lesson({ lesson, handleSelection }: LessonProps) {
+  const windowWidth = useWindowWidth()
   const handleSelectionMobile = (lesson: ILesson) => {
-    if (window.innerWidth > breakpoints.MOBILE) handleSelection(lesson)
+    if (windowWidth > breakpoints.MOBILE) handleSelection(lesson)
     else window.open(`https://www.youtube.com/watch?v=${lesson.url}`)
   }
 

@@ -47,7 +47,7 @@ export default function Navbar({ isRoot }: NavbarProps) {
                   className="flex h-full items-center gap-2"
                 >
                   <Image
-                    className="max-h-8"
+                    className="max-h-8 w-auto"
                     src={item.icon}
                     height={35}
                     width={35}

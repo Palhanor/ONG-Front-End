@@ -32,7 +32,7 @@ export async function POST(request: Request) {
   try {
     await transporter.sendMail({
       from: process.env.EMAIL,
-      to: process.env.EMAIL,
+      to: `${process.env.EMAIL}, escoladoreal@gmail.com`,
       subject: title,
       html: htmlEmailTemplate(name, title, email, message),
     })

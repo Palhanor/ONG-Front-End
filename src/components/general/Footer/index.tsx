@@ -7,6 +7,7 @@ export default function Footer() {
       <div className="flex justify-center gap-4">
         <Link href="#">
           <Image
+            className="h-8 w-auto"
             width={29}
             height={29}
             src="/icons/instagram.svg"
@@ -15,6 +16,7 @@ export default function Footer() {
         </Link>
         <Link href="#">
           <Image
+            className="h-8 w-auto"
             width={29}
             height={29}
             src="/icons/linkedin.svg"
@@ -23,6 +25,7 @@ export default function Footer() {
         </Link>
         <Link href="#">
           <Image
+            className="h-8 w-auto"
             width={29}
             height={29}
             src="/icons/facebook.svg"

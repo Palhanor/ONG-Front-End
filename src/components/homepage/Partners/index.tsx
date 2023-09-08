@@ -28,7 +28,13 @@ export default function Partners() {
         <ul className="mt-12 grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-3 lg:grid-cols-4">
           {data.map((item) => (
             <li key={item.src} className="flex items-center justify-center">
-              <Image src={item.src} alt={item.alt} width={150} height={100} />
+              <Image
+                className="h-auto w-auto"
+                src={item.src}
+                alt={item.alt}
+                width={150}
+                height={100}
+              />
             </li>
           ))}
         </ul>

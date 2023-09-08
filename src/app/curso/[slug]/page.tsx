@@ -55,7 +55,7 @@ export default async function Course({ params }: { params: { slug: string } }) {
             <VideoIcon />
             {course.lessons} Aulas
           </span>
-          <div className="hidden md:block">&#x2022;</div>
+          <span className="hidden md:block">&#x2022;</span>
           <span className="flex items-center gap-1">
             <ClockIcon />
             {timeMask(course.duration)}

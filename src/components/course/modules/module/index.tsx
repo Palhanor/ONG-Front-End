@@ -1,6 +1,7 @@
 'use client'
 
 import { DownIcon } from '@/components/general/Icons'
+import useWindowWidth from '@/hooks/useWindowWidth'
 import { ILesson } from '@/interfaces/lesson'
 import { Module as ModuleModel } from '@/model/Module'
 import { textPreview } from '@/utils/text-preview'
@@ -21,6 +22,7 @@ export default function Module({
 }: ModuleProps) {
   const [open, setOpen] = useState<boolean>(false)
   const handleClick = () => setOpen((prev) => !prev)
+  const windowWidth = useWindowWidth()
 
   return (
     <div className="border-x border-t border-slate-300 last:border-b hover:bg-gray-50 md:border-slate-400 ">
@@ -58,7 +60,7 @@ export default function Module({
             'text-sm md:text-base ' + (open ? 'text-gray-100' : 'text-gray-600')
           }
         >
-          {textPreview(module.description, window.innerWidth, open)}
+          {textPreview(module.description, windowWidth, open)}
         </p>
       </div>
       {open && (
