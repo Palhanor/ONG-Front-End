@@ -25,14 +25,14 @@ export async function POST(request: Request) {
     secure: false,
     auth: {
       user: process.env.EMAIL,
-      pass: process.env.PASSWORD_AUTH,
+      pass: process.env.APP_PASSWORD,
     },
   })
 
   try {
     await transporter.sendMail({
       from: process.env.EMAIL,
-      to: `${process.env.EMAIL}, escoladoreal@gmail.com`,
+      to: process.env.EMAIL,
       subject: title,
       html: htmlEmailTemplate(name, title, email, message),
     })
