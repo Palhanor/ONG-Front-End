@@ -52,6 +52,7 @@ export default function Message() {
         mode: 'cors',
         method: 'POST',
         headers: {
+          origin: process.env.NEXT_PUBLIC_PATHNAME || '',
           Accept: 'application/json, text/plain, */*',
           'Content-Type': 'application/json',
         },

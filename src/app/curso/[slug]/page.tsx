@@ -16,7 +16,10 @@ interface MetadataProps {
 async function getCourseBySlug(slug: string) {
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_PATHNAME}/api/cursos/${slug}`,
-    { mode: 'cors' },
+    {
+      mode: 'cors',
+      headers: { origin: process.env.NEXT_PUBLIC_PATHNAME || '' },
+    },
   )
   if (response.status !== 200) notFound()
   const { data } = await response.json()
