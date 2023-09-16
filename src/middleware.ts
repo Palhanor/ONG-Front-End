@@ -4,8 +4,9 @@ export function middleware(request: NextRequest) {
   if (request.url.includes('/api/')) {
     const origin = request.headers.get('origin') || ''
     const allowedOrigin = process.env.ORIGIN || ''
+    const isProd = process.env.PROD
 
-    if (!origin && !allowedOrigin) {
+    if (!origin && isProd === 'true') {
       return NextResponse.json(
         { error: 'Unauthorized operation' },
         { status: 401 },
