@@ -49,6 +49,7 @@ export default function Message() {
     setSending(true)
     try {
       await fetch(`${process.env.NEXT_PUBLIC_PATHNAME}/api/mensagem`, {
+        mode: 'cors',
         method: 'POST',
         headers: {
           Accept: 'application/json, text/plain, */*',
