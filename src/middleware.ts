@@ -2,17 +2,15 @@ import { NextRequest, NextResponse } from 'next/server'
 
 export function middleware(request: NextRequest) {
   if (request.url.includes('/api/')) {
-    // const origin = request.headers.get('origin') || ''
+    const origin = request.headers.get('origin') || ''
     const allowedOrigin = process.env.ORIGIN || ''
-    // const allowsEverything = allowedOrigin === '*'
-    // const isSameOrigin = allowedOrigin === origin
 
-    // if (!allowsEverything && !isSameOrigin) {
-    //   return NextResponse.json(
-    //     { error: 'Unauthorized operation' },
-    //     { status: 401 },
-    //   )
-    // }
+    if (!origin && !allowedOrigin) {
+      return NextResponse.json(
+        { error: 'Unauthorized operation' },
+        { status: 401 },
+      )
+    }
 
     const response = NextResponse.next()
     response.headers.append('Access-Control-Allow-Origin', allowedOrigin)
