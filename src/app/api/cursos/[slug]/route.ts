@@ -1,10 +1,10 @@
 import { ICourse } from '@/interfaces/course'
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 import { Context } from 'vm'
 import { Course } from '../../../../model/Course'
 import { courses } from '../../data/courses'
 
-export async function GET(request: Request, context: Context) {
+export async function GET(request: NextRequest, context: Context) {
   const slug: string = context.params.slug
   const course: ICourse | undefined = courses.find(
     (course) => course.slug === slug,

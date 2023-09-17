@@ -5,14 +5,9 @@ export function middleware(request: NextRequest) {
     const origin = request.headers.get('origin')
     const allowedOrigin = process.env.ORIGIN || ''
 
-    console.log({
-      origin,
-      allowedOrigin,
-    })
-
     if (!origin) {
       return NextResponse.json(
-        { erro: 'Operação não autorizada', origem: origin },
+        { erro: 'Operação não autorizada' },
         { status: 401 },
       )
     }

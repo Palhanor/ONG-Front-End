@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
 
 const htmlEmailTemplate = (
@@ -15,8 +15,39 @@ const htmlEmailTemplate = (
   </div>`
 }
 
-export async function POST(request: Request) {
-  const { name, title, email, message } = await request.json()
+export async function POST(request: NextRequest) {
+  const { name, title, email, message, token } = await request.json()
+
+  if (!name || !title || !email || !message || !token) {
+    return NextResponse.json(
+      { erro: 'O conteúdo do body não foi passado de forma apropriada' },
+      { status: 400 },
+    )
+  }
+
+  const emailPattern = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/
+  if (!emailPattern.test(email)) {
+    return NextResponse.json(
+      { erro: 'O e-mail inserido não é válido' },
+      { status: 400 },
+    )
+  }
+
+  try {
+    const result = await fetch(
+      `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.CAPTCHA_CHAVE_PRIVADA}&response=${token}`,
+      { method: 'POST' },
+    )
+    const data = await result.json()
+    if (!data.success) {
+      return NextResponse.json(
+        { erro: 'A submissão deve ser realizada por um ser humano' },
+        { status: 400 },
+      )
+    }
+  } catch (error) {
+    return NextResponse.json(error, { status: 500 })
+  }
 
   const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -38,7 +69,6 @@ export async function POST(request: Request) {
     })
     return NextResponse.json({ name, title, email, message }, { status: 201 })
   } catch (error) {
-    console.log(error)
     return NextResponse.json(error, { status: 500 })
   }
 }
